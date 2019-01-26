@@ -1,9 +1,9 @@
 div{
   /* TODO: resize Image so its not so much of a resource hog */
 
-  background: url(../assets/Images/backgroundImage.jpg);
+  /* background: url(../assets/Images/backgroundImage.jpg);
   height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center center; */
 }

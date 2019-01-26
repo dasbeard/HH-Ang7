@@ -13,8 +13,6 @@ import { HomeMapComponent } from './components/layout/home-map/home-map.componen
 
 
 import { MatButtonModule, MatCheckboxModule, MatToolbarModule, MatExpansionModule, MatListModule } from '@angular/material';
-import { LoginComponent } from './components/pages/login/login.component';
-// import { MatMenuModule } from '@angular/material/menu';
 
 
 
@@ -26,8 +24,7 @@ import { LoginComponent } from './components/pages/login/login.component';
     HomeHeaderComponent,
     HomeFooterComponent,
     HomeAccordianComponent,
-    HomeMapComponent,
-    LoginComponent
+    HomeMapComponent
   ],
   imports: [
     BrowserModule,
