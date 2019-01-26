@@ -1,5 +1,5 @@
 <mat-accordion>
-  <mat-expansion-panel>
+  <mat-expansion-panel [expanded]="true">
     <mat-expansion-panel-header>
       <mat-panel-title>
         Within 2 Miles
@@ -8,21 +8,21 @@
         Number of Locations
       </mat-panel-description>
     </mat-expansion-panel-header>
-    <mat-list>
+    <mat-list class="location">
       <mat-list-item>
-        <span>Location Name</span>
-        <span>12374 Main St, My Town</span>
-        <span> (0.2mi)</span>
+        <p class="name">Location Name</p>
+        <p class="address">12374 Main St, My Town</p>
+        <p class="dist"> (0.2mi)</p>
       </mat-list-item>
       <mat-list-item>
-        <span>Location Name</span>
-        <span>Street Address and Town Name</span>
-        <span> (0.2mi)</span>
+        <p class="name">Location Name</p>
+        <p class="address">12374 Main St, My Town</p>
+        <p class="dist"> (0.2mi)</p>
       </mat-list-item>
       <mat-list-item>
-        <span>Location Name</span>
-        <span>Street Address and Town Name</span>
-        <span> (0.2mi)</span>
+        <p class="name">Location Name</p>
+        <p class="address">12374 Main St, My Town</p>
+        <p class="dist"> (0.2mi)</p>
       </mat-list-item>
     </mat-list>
   </mat-expansion-panel>
@@ -37,26 +37,23 @@
       </mat-panel-description>
     </mat-expansion-panel-header>
     <mat-list>
-
       <mat-list-item>
-        <span>Location Name</span>
-        <span>Street Address and Town Name</span>
-        <span> (0.2mi)</span>
+        <p class="name">Location Name</p>
+        <p class="address">12374 Main St, My Town</p>
+        <p class="dist"> (0.2mi)</p>
       </mat-list-item>
       <mat-list-item>
-        <span>Location Name</span>
-        <span>Street Address and Town Name</span>
-        <span> (0.2mi)</span>
+        <p class="name">Location Name</p>
+        <p class="address">12374 Main St, My Town</p>
+        <p class="dist"> (0.2mi)</p>
       </mat-list-item>
       <mat-list-item>
-        <span>Location Name</span>
-        <span>Street Address and Town Name</span>
-        <span> (0.2mi)</span>
+        <p class="name">Location Name</p>
+        <p class="address">12374 Main St, My Town</p>
+        <p class="dist"> (0.2mi)</p>
       </mat-list-item>
     </mat-list>
-
   </mat-expansion-panel>
-
 
 
   <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">

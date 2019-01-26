@@ -1,7 +1,11 @@
-mat-list-item {
-  display: grid;
-  width: 100%;
-  grid-template-areas: 
-                      "name address dist";
-  grid-template-columns: 30% auto 15%;
+mat-list-item:nth-child(even) {
+  background-color: rgba(127, 127, 127, .1);
+}
+
+.address {
+  flex: 1 1 auto;
+}
+
+.dist {
+  font-size: .75rem;
 }
