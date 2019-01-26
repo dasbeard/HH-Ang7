@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-accordian.component.css']
 })
 export class HomeAccordianComponent implements OnInit {
+  panelOpenState = false;
 
   constructor() { }
 

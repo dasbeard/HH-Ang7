@@ -1,3 +1,73 @@
-<p>
-  home-accordian works!
-</p>
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Within 2 Miles
+      </mat-panel-title>
+      <mat-panel-description>
+        Number of Locations
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-list>
+      <mat-list-item>
+        <span>Location Name</span>
+        <span>12374 Main St, My Town</span>
+        <span> (0.2mi)</span>
+      </mat-list-item>
+      <mat-list-item>
+        <span>Location Name</span>
+        <span>Street Address and Town Name</span>
+        <span> (0.2mi)</span>
+      </mat-list-item>
+      <mat-list-item>
+        <span>Location Name</span>
+        <span>Street Address and Town Name</span>
+        <span> (0.2mi)</span>
+      </mat-list-item>
+    </mat-list>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Within 5 Miles
+      </mat-panel-title>
+      <mat-panel-description>
+        Number of Locations
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-list>
+
+      <mat-list-item>
+        <span>Location Name</span>
+        <span>Street Address and Town Name</span>
+        <span> (0.2mi)</span>
+      </mat-list-item>
+      <mat-list-item>
+        <span>Location Name</span>
+        <span>Street Address and Town Name</span>
+        <span> (0.2mi)</span>
+      </mat-list-item>
+      <mat-list-item>
+        <span>Location Name</span>
+        <span>Street Address and Town Name</span>
+        <span> (0.2mi)</span>
+      </mat-list-item>
+    </mat-list>
+
+  </mat-expansion-panel>
+
+
+
+  <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Self aware panel
+      </mat-panel-title>
+      <mat-panel-description>
+        Currently I am {{panelOpenState ? 'open' : 'closed'}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>I'm visible because I am open</p>
+  </mat-expansion-panel>
+</mat-accordion>

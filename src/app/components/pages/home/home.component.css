@@ -1,13 +1,15 @@
 div {
   display: grid;
   width: 100%;
-  height: 100%;
+  height: 90vh;
   grid-template-areas: 
                       "header header"
                       "map accordian"
                       "footer footer";
-  grid-template-rows: 1fr 2.5fr 75px;
+  grid-template-rows: .25fr 1fr 55px;
   grid-template-columns: 1fr 1fr;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .header{
@@ -27,6 +29,7 @@ div {
   margin-left: 10%;  
   width: 80%;
   border-radius: 5px;
+  text-align: center;
 }
 .accordian {
   grid-area: accordian;
@@ -34,6 +37,7 @@ div {
   margin-left: 10%;  
   width: 80%;
   border-radius: 5px;
+  text-align: center;
 }
 .footer {
   grid-area: footer;
@@ -42,6 +46,5 @@ div {
   width: 80%;
   margin-top: 15px;
   border-radius: 5px;
-  /* position: absolute;
-  top:90%; */
+  text-align: center;
 }

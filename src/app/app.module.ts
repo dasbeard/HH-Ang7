@@ -12,7 +12,8 @@ import { HomeAccordianComponent } from './components/layout/home-accordian/home-
 import { HomeMapComponent } from './components/layout/home-map/home-map.component';
 
 
-import { MatButtonModule, MatCheckboxModule, MatToolbarModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatToolbarModule, MatExpansionModule, MatListModule } from '@angular/material';
+import { LoginComponent } from './components/pages/login/login.component';
 // import { MatMenuModule } from '@angular/material/menu';
 
 
@@ -25,7 +26,8 @@ import { MatButtonModule, MatCheckboxModule, MatToolbarModule } from '@angular/m
     HomeHeaderComponent,
     HomeFooterComponent,
     HomeAccordianComponent,
-    HomeMapComponent
+    HomeMapComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,9 @@ import { MatButtonModule, MatCheckboxModule, MatToolbarModule } from '@angular/m
     BrowserAnimationsModule,
     MatButtonModule,
     MatCheckboxModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatExpansionModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
