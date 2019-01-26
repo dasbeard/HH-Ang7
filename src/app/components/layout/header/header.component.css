@@ -1,0 +1,22 @@
+mat-toolbar a {
+  color: #000;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.AppTitle {
+  font-size: 1.6rem;
+}
+
+
+span a, span{
+  font-size: 1rem;
+  color: #111;
+  /* padding: 10px; */
+}
+
+.example-fill-remaining-space {
+  /* This fills the remaining space, by using flexbox. 
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
