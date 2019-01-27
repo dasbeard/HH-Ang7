@@ -19,6 +19,7 @@ import { RegisterComponent } from './components/pages/logReg/register/register.c
 
 import { MatButtonModule, MatCheckboxModule, MatToolbarModule, MatExpansionModule, MatListModule, MatButtonToggleModule, MatInputModule, MatIconModule } from '@angular/material';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { LocationComponent } from './components/pages/location/location.component';
 
 
 
@@ -34,7 +35,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     HomeMapComponent,
     LoginPageComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    LocationComponent
   ],
   imports: [
     BrowserModule,

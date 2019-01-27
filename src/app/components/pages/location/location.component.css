@@ -1,0 +1,108 @@
+.container {
+  background-color: lavender;
+  width: 95%;
+  height: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+
+
+/* .container {
+  background-color: lavender;
+  width: 95%;
+  max-width: 960px;
+  display: grid;
+  grid-template-rows: 75px 25% 10% 20% auto;
+  grid-auto-columns: 50% 50%;
+  grid-template-areas: 
+                    "title contact"
+                    "img map"
+                    "about about"
+                    "hoursOfOp foodHours"
+                    "services otherServices";
+  margin: 0 auto;
+  margin-top: 15px;
+} */
+
+.info {
+  display: grid;
+  grid-template-rows: 65px 75% 10%;
+  grid-auto-columns: 65% 35%;
+  grid-template-areas: 
+                    "title contact"
+                    "img map"
+                    "img address";
+  height: 45%
+}
+
+.info .title {
+  grid-area: title;
+  background-color: red;
+}
+
+.info .contact {
+  grid-area: contact;
+  background-color: white;
+}
+
+.info .img {
+  grid-area: img;
+  background-color: green;
+  width: 100%;
+  height: 100%;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+  /* overflow: hidden; */
+}
+
+
+.info .map {
+  grid-area: map;
+  background-color: yellow;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+
+}
+
+.info .address {
+  grid-area: address;
+  background-color: chartreuse;
+}
+
+
+
+
+
+
+
+
+.about {
+  grid-area: about;
+  background-color: purple;
+}
+
+.hoursOfOp {
+  grid-area: hoursOfOp;
+  background-color: cyan;
+}
+
+.foodHours {
+  grid-area: foodHours;
+  background-color: grey;
+}
+
+.services {
+  grid-area: services;
+  background-color: silver;
+}
+
+.otherServices {
+  grid-area: otherServices;
+  background-color: greenyellow;
+}

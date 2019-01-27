@@ -48,4 +48,5 @@ export class Location {
   sat?: Hours;
   sun?: Hours;
   servicesAvailable?: Services;
+  otherServices?: string;
 };
