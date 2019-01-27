@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { HomeComponent } from './components/pages/home/home.component';
@@ -10,9 +12,14 @@ import { HomeHeaderComponent } from './components/layout/home-header/home-header
 import { HomeFooterComponent } from './components/layout/home-footer/home-footer.component';
 import { HomeAccordianComponent } from './components/layout/home-accordian/home-accordian.component';
 import { HomeMapComponent } from './components/layout/home-map/home-map.component';
+import { LoginPageComponent } from './components/pages/logReg/login-page/login-page.component';
+import { LoginComponent } from './components/pages/logReg/login/login.component';
+import { RegisterComponent } from './components/pages/logReg/register/register.component';
 
 
-import { MatButtonModule, MatCheckboxModule, MatToolbarModule, MatExpansionModule, MatListModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatToolbarModule, MatExpansionModule, MatListModule, MatButtonToggleModule, MatInputModule, MatIconModule } from '@angular/material';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
 
 
 
@@ -24,17 +31,27 @@ import { MatButtonModule, MatCheckboxModule, MatToolbarModule, MatExpansionModul
     HomeHeaderComponent,
     HomeFooterComponent,
     HomeAccordianComponent,
-    HomeMapComponent
+    HomeMapComponent,
+    LoginPageComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
+    FormsModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatCheckboxModule,
     MatToolbarModule,
     MatExpansionModule,
-    MatListModule
+    MatListModule,
+    MatButtonToggleModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

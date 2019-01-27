@@ -1,0 +1,47 @@
+.container {
+  background-color: lavender;
+
+  width: 65%;
+  max-width: 650px;
+  height: 275px;
+  max-height: 350px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.5);
+}
+
+mat-form-field {
+  margin-bottom: 25px;
+}
+
+.form-container {
+  /* display: flex;
+  flex-direction: column; */
+
+  display: grid;
+  grid-template-areas: 
+                      "street street"
+                      "city zip"
+                      "btn btn";
+  grid-template-rows: 42% 42% auto;
+  grid-template-columns: 65% 35%;
+}
+
+.form-container > * {
+  width: 100%;
+}
+
+.street{
+  grid-area: street;
+}
+.city{
+  grid-area: city;
+}
+.zip{
+  grid-area: zip;
+  margin-left: 10px;
+}
+.btn{
+  grid-area: btn;
+}

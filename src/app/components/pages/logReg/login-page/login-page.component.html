@@ -1,0 +1,12 @@
+<div class='container'>
+
+  <div class="navigation">
+    <mat-button-toggle-group value="login" class="nav">
+      <mat-button-toggle value="login" [routerLink]="['/login']">Login</mat-button-toggle>
+      <mat-button-toggle value="register" [routerLink]="['/login/register']">Register</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
+  <router-outlet></router-outlet>
+
+</div>
