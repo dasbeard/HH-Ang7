@@ -1,3 +1,14 @@
-<p>
-  services works!
-</p>
+<div class="container">
+
+  <!-- TODO: To enable checked status, must use model in .ts file -->
+
+  <mat-checkbox class="beds" disabled=true [(ngModel)]="beds"> Beds Available</mat-checkbox>
+  <mat-checkbox class="clothing rightAlign" [(ngModel)]="beds">Clothing Available</mat-checkbox>
+  <mat-checkbox class="donations" color='warn'>Accepts Donations</mat-checkbox>
+  <mat-checkbox class="eduHelp rightAlign">Education Help</mat-checkbox>
+  <mat-checkbox class="childCare">Childcare Available</mat-checkbox>
+  <mat-checkbox class="jobPlacement rightAlign">Job Placement</mat-checkbox>
+  <mat-checkbox class="interview">Interview Help</mat-checkbox>
+  <mat-checkbox class="recActivities rightAlign">Recreational Activities</mat-checkbox>
+
+</div>

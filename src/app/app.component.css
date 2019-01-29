@@ -1,9 +1,4 @@
-div{
-  /* TODO: resize Image so its not so much of a resource hog */
-
-  /* background: url(../assets/Images/backgroundImage.jpg);
-  height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center; */
+.mainContainer {
+  max-width: 960px;
+  margin: 0 auto;
 }

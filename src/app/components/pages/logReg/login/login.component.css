@@ -1,5 +1,6 @@
 .container {
-  background-color: lavender;
+  /* background-color: lavender; */
+  background-color: white;
 
   width: 65%;
   max-width: 650px;
