@@ -8,6 +8,9 @@
   padding: 0;
 }
 
+html{
+
+}
 
 html, body { 
   height: 100%; 
@@ -15,7 +18,15 @@ html, body {
 
 body { 
   font-family: Roboto, "Helvetica Neue", sans-serif; 
-  /* background-color: black; */
-  /* line-height: 1.4; */
+  
+  /* TODO: resize Image so its not so much of a resource hog */
+  
+  background-color: black;
+  background: url(./assets/Images/backgroundImage.jpg);
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
 }
 

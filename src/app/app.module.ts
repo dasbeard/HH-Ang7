@@ -15,12 +15,13 @@ import { HomeMapComponent } from './components/layout/home-map/home-map.componen
 import { LoginPageComponent } from './components/pages/logReg/login-page/login-page.component';
 import { LoginComponent } from './components/pages/logReg/login/login.component';
 import { RegisterComponent } from './components/pages/logReg/register/register.component';
-
-
-import { MatButtonModule, MatCheckboxModule, MatToolbarModule, MatExpansionModule, MatListModule, MatButtonToggleModule, MatInputModule, MatIconModule } from '@angular/material';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { LocationComponent } from './components/pages/location/location.component';
+import { ServicesComponent } from './components/layout/services/services.component';
 
+
+import { MatButtonModule, MatCheckboxModule, MatToolbarModule, MatExpansionModule, MatListModule, MatButtonToggleModule, MatInputModule, MatIconModule, MatFormFieldModule, MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
+import { HoursOfOpTableComponent } from './components/layout/hours-of-op-table/hours-of-op-table.component';
+import { ServingFoodTableComponent } from './components/layout/serving-food-table/serving-food-table.component';
 
 
 
@@ -36,7 +37,10 @@ import { LocationComponent } from './components/pages/location/location.componen
     LoginPageComponent,
     LoginComponent,
     RegisterComponent,
-    LocationComponent
+    LocationComponent,
+    ServicesComponent,
+    HoursOfOpTableComponent,
+    ServingFoodTableComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +58,9 @@ import { LocationComponent } from './components/pages/location/location.componen
     ReactiveFormsModule,
     MatInputModule,
     MatIconModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

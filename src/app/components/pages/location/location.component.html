@@ -1,53 +1,68 @@
 <div class="container">
 
-  <div class="info">
-    <h1>Title Goes Here</h1>
-    <img class="img" src="" alt="" style="background-image: url('https://fillmurray.com/550/550')">
-    <img class="map" src="" alt="" style="background-image: url('https://fillmurray.com/450/450')">
+  <h1 class="title">Title Goes Here Title Goes Here Here</h1>
 
-    <div class="contactInfo">
-      <ul>
-        <li>1234567890</li>
-        <li>WebSiteAddress.com</li>
-        <li>SomeEmailAddress@goes.here</li>
-      </ul>
-    </div>
-    <ul class="address">
-      <li>
-        12345 Some Street, my Town, NW 54321
-      </li>
+  <div class="contact">
+    <ul>
+      <li>1234567890</li>
+      <li>WebSiteAddress.com</li>
+      <li>SomeEmailAddress@goes.here</li>
     </ul>
   </div>
+
+  <img class="img" src="" alt="" style="background-image: url('https://fillmurray.com/550/550')">
+
+  <img class="map" src="" alt="" style="background-image: url('https://fillmurray.com/450/450')">
+
+  <ul class="address">
+    <li>
+      12345 Some Street, my Town, NW 54321
+    </li>
+  </ul>
 
   <div class="aboutUs">
     <h2>About Us</h2>
     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis hic architecto sit nisi incidunt minus
       reprehenderit tempore aliquid tempora maxime, veniam earum quaerat dolor, veritatis officia soluta explicabo!
       Est,
-      facere.</p>
+      facere. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque commodi nesciunt sint sequi aliquam
+      molestias a tempore ab, tempora consectetur consequuntur veritatis delectus nostrum autem incidunt. Velit sunt
+      aliquid eveniet.</p>
+
+  </div>
+
+
+
+
+  <div class="hoursOfOp">
+    <h2>Hours of Operation</h2>
+    <app-hours-of-op-table></app-hours-of-op-table>
+
+  </div>
+
+  <div class="foodHours">
+    <h2>Hours Serving Food</h2>
+    <app-serving-food-table></app-serving-food-table>
   </div>
 
   <div class="services">
-
-
-    <!-- Hours Of Operation Module 
-      TODO: Create the 3 modules below
-    -->
-    <div class="hoursOfOp"></div>
-
-    <!-- Hours Serving Food Module -->
-    <div class="foodHours"></div>
-
-    <!-- Services Modules -->
-    <div class="services"></div>
-
-
-    <div class="otherServices">
-      <h2>Other Services</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error atque maxime quis dolorem non temporibus
-        obcaecati, minus delectus ex! Quas deserunt ad odio repellat pariatur expedita numquam inventore maxime
-        exercitationem?</p>
-    </div>
+    <h2>Services Available</h2>
+    <app-services></app-services>
   </div>
 
+
+  <div class="otherServices">
+    <h2>Other Services</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error atque maxime quis dolorem non temporibus
+      obcaecati, minus delectus ex! Quas deserunt ad odio repellat pariatur expedita numquam inventore maxime
+      exercitationem?</p>
+  </div>
+  <!-- </div> -->
+
 </div>
+
+
+
+<!-- 
+  ng generate @angular/material:material-table --name=data-table
+ -->
