@@ -22,7 +22,8 @@ import { ServingFoodTableComponent } from './components/layout/serving-food-tabl
 
 // Firebase
 import { AngularFireModule } from '@angular/fire';
-import { environment } from '../environments/environment';
+// import { environment } from '../environments/environment';
+import { Keys } from '../../keys';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
@@ -72,12 +73,12 @@ import { MatButtonModule, MatCheckboxModule, MatToolbarModule, MatExpansionModul
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(Keys.firebase),
     AngularFirestoreModule,   // Database
     AngularFireAuthModule,    // Auth Features
     AngularFireStorageModule, BrowserAnimationsModule, // Storage
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDfPvqr4KDfok4tWR_vMgC1oQxhrYu4fzg'
+      apiKey: Keys.apiKey
     })
   ],
   providers: [],

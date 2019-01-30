@@ -4,14 +4,6 @@
 
 export const environment = {
   production: false,
-  firebase: {
-    apiKey: "AIzaSyCnNhPAM7_ngbd8FlUIUY0kiC6UYBdUmOY",
-    authDomain: "helpinghours2019.firebaseapp.com",
-    databaseURL: "https://helpinghours2019.firebaseio.com",
-    projectId: "helpinghours2019",
-    storageBucket: "helpinghours2019.appspot.com",
-    messagingSenderId: "52357540518"
-  }
 };
 
 /*
