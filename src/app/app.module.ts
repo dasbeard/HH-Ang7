@@ -17,11 +17,21 @@ import { LoginComponent } from './components/pages/logReg/login/login.component'
 import { RegisterComponent } from './components/pages/logReg/register/register.component';
 import { LocationComponent } from './components/pages/location/location.component';
 import { ServicesComponent } from './components/layout/services/services.component';
-
-
-import { MatButtonModule, MatCheckboxModule, MatToolbarModule, MatExpansionModule, MatListModule, MatButtonToggleModule, MatInputModule, MatIconModule, MatFormFieldModule, MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
 import { HoursOfOpTableComponent } from './components/layout/hours-of-op-table/hours-of-op-table.component';
 import { ServingFoodTableComponent } from './components/layout/serving-food-table/serving-food-table.component';
+
+// Firebase
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
+// Agular Google Maps
+import { AgmCoreModule } from '@agm/core';
+
+// Material Design
+import { MatButtonModule, MatCheckboxModule, MatToolbarModule, MatExpansionModule, MatListModule, MatButtonToggleModule, MatInputModule, MatIconModule, MatFormFieldModule, MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
 
 
 
@@ -41,6 +51,7 @@ import { ServingFoodTableComponent } from './components/layout/serving-food-tabl
     ServicesComponent,
     HoursOfOpTableComponent,
     ServingFoodTableComponent
+
   ],
   imports: [
     BrowserModule,
@@ -61,6 +72,13 @@ import { ServingFoodTableComponent } from './components/layout/serving-food-tabl
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,   // Database
+    AngularFireAuthModule,    // Auth Features
+    AngularFireStorageModule, BrowserAnimationsModule, // Storage
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDfPvqr4KDfok4tWR_vMgC1oQxhrYu4fzg'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
