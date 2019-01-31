@@ -23,10 +23,9 @@ export class HomeMapComponent implements OnInit {
   findMe() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
-        console.log(position);
+        // console.log(position);
         this.lat = position.coords.latitude;
         this.lng = position.coords.longitude;
-        // this.showPosition(position);
       });
     } else {
       alert("Geolocation is not supported by this browser.");
