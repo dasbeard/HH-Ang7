@@ -1,12 +1,12 @@
-<div class="container">
+<div class="container" *ngIf="orgInfo != null">
 
-  <h1 class="title">Title Goes Here Title Goes Here Here</h1>
+  <h1 class="title">{{ orgInfo.title }}</h1>
 
   <div class="contact">
     <ul>
-      <li>1234567890</li>
-      <li>WebSiteAddress.com</li>
-      <li>SomeEmailAddress@goes.here</li>
+      <li>{{ orgInfo.phone }}</li>
+      <li>{{orgInfo.website}}</li>
+      <li>{{orgInfo.contactEmail}}</li>
     </ul>
   </div>
 
@@ -16,18 +16,17 @@
 
   <ul class="address">
     <li>
-      12345 Some Street, my Town, NW 54321
+      {{orgInfo.streetAddress1}} {{orgInfo.streetAddress2}}, {{orgInfo.city}}, {{orgInfo.state}} {{orgInfo.zipcode}}
     </li>
   </ul>
 
   <div class="aboutUs">
     <h2>About Us</h2>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis hic architecto sit nisi incidunt minus
-      reprehenderit tempore aliquid tempora maxime, veniam earum quaerat dolor, veritatis officia soluta explicabo!
-      Est,
-      facere. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque commodi nesciunt sint sequi aliquam
-      molestias a tempore ab, tempora consectetur consequuntur veritatis delectus nostrum autem incidunt. Velit sunt
-      aliquid eveniet.</p>
+    <p>
+
+      {{ orgInfo.aboutUs }}
+
+    </p>
 
   </div>
 
@@ -53,9 +52,9 @@
 
   <div class="otherServices">
     <h2>Other Services</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error atque maxime quis dolorem non temporibus
-      obcaecati, minus delectus ex! Quas deserunt ad odio repellat pariatur expedita numquam inventore maxime
-      exercitationem?</p>
+    <p>
+      {{orgInfo.otherServices}}
+    </p>
   </div>
   <!-- </div> -->
 

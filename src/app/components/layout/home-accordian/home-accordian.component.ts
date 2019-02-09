@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { OrganizationInfo } from 'src/app/models/Location';
 
 @Component({
   selector: 'app-home-accordian',
@@ -8,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class HomeAccordianComponent implements OnInit {
   panelOpenState = false;
 
+  @Input() allOrgs: OrganizationInfo[];
+
   constructor() { }
 
   ngOnInit() {
+    console.log('init');
+
   }
 
 }

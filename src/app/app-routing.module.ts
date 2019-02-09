@@ -23,21 +23,22 @@ const routes: Routes = [
       { path: 'register', pathMatch: 'full', component: RegisterComponent },
     ]
   },
-
-  // TODO: Make Dynamic
   {
-    path: 'location',
+    path: 'org/:id',
     // pathMatch: 'full',
     component: LocationComponent,
     children: []
   },
-
 
   {
     path: 'home',
     pathMatch: 'full',
     redirectTo: ''
   }
+
+  // TODO: Make a 'PAGE NOT FOUND' component/page
+
+
 
 ];
 

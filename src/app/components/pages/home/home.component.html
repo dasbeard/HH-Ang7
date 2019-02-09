@@ -1,9 +1,10 @@
 <div class="container">
   <app-home-header class="header"></app-home-header>
 
-  <app-home-map class="map"></app-home-map>
+  <app-home-map class="map" [userLocation]="userLocation" (userGeoLocations)="userGeoLocation(userLocation)" [allOrgs]="allLocations">
+  </app-home-map>
 
-  <app-home-accordian class="accordian"></app-home-accordian>
+  <app-home-accordian class="accordian" [allOrgs]="allLocations"></app-home-accordian>
 
   <app-home-footer class="footer"></app-home-footer>
 
