@@ -1,10 +1,30 @@
-<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoomLevel">
+<agm-map [latitude]='defaultMapView.latitude' [longitude]="defaultMapView.longitude" [zoom]="defaultMapView.zoomLevel"
+  [mapTypeControlOptions]=false (zoomChange)="onMapZoom($event)">
 
   <!-- Browser Location -->
-  <agm-marker class="test" [latitude]="lat" [longitude]="lng" iconUrl="http://maps.google.com/mapfiles/ms/icons/lightblue.png">
+  <agm-marker class="test" *ngIf="userMarker" [latitude]='defaultMapView.latitude' [longitude]="defaultMapView.longitude"
+    [iconUrl]="defaultMapView.icon">
+
+    <agm-info-window>You Are Here</agm-info-window>
   </agm-marker>
 
+
+  <agm-circle [latitude]="defaultMapView.latitude" [longitude]="defaultMapView.longitude" [radius]="1000" [fillColor]="'rgba(84, 149, 255, 1)'">
+  </agm-circle>
+
   <!-- Nearby Locations -->
+  <div *ngIf="markers">
+
+    <agm-marker *ngFor="let m of allLocations" [latitude]="m.location.latitude" [longitude]="m.location.longitude">
+
+      <agm-info-window>
+        <strong>{{ m.title }}</strong>
+      </agm-info-window>
+
+    </agm-marker>
+  </div>
+
+
 
 
 </agm-map>

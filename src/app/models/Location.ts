@@ -17,36 +17,49 @@ export class Hours {
   closePeriod: string;
 };
 
+export class GeoLocation {
+  latitude?: number;
+  longitude?: number;
+}
 
 export class Location {
-  id?: number;
+  // id?: number;
   title?: string;
   website?: string;
   userEmail?: string;
   contactEmail?: string;
-  contactPhone?: number;
-  fullAddress?: string;
+  phone?: number;
+  // fullAddress?: string;
   streetAddress1?: string;
   streetAddress2?: string;
   city?: string;
+  neighborhood?: string;
   state?: string;
   zipcode?: number;
   country?: string;
   aboutUs?: string;
-  servingMon?: Hours;
-  servingTue?: Hours;
-  servingWen?: Hours;
-  servingThur?: Hours;
-  servingFri?: Hours;
-  servingSat?: Hours;
-  servingSun?: Hours;
-  mon?: Hours;
-  tue?: Hours;
-  wen?: Hours;
-  thur?: Hours;
-  fri?: Hours;
-  sat?: Hours;
-  sun?: Hours;
-  servicesAvailable?: Services;
+  services?: Services;
   otherServices?: string;
+  location?: GeoLocation;
+};
+
+export interface LocationInterface {
+  // id?: number;
+  title: string;
+  website: string;
+  userEmail: string;
+  contactEmail: string;
+  phone: number;
+  // fullAddress: string;
+  streetAddress1: string;
+  streetAddress2: string;
+  city: string;
+  neighborhood: string;
+  state: string;
+  zipcode: number;
+  country: string;
+  aboutUs: string;
+  services: Services;
+  otherServices: string;
+  location: GeoLocation;
 };

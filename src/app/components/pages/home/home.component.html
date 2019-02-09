@@ -1,9 +1,16 @@
 <div class="container">
   <app-home-header class="header"></app-home-header>
 
-  <app-home-map class="map"></app-home-map>
+  <!-- <div class="temp" *ngIf="locations">
+    test
+    <p *ngFor="let location of locations">
+      {{ location.title }}
+    </p>
+  </div> -->
 
-  <app-home-accordian class="accordian"></app-home-accordian>
+  <app-home-map class="map" [userLocationParent]="userLocation" [locations]="locations"></app-home-map>
+
+  <app-home-accordian class="accordian" [locations]="locations"></app-home-accordian>
 
   <app-home-footer class="footer"></app-home-footer>
 

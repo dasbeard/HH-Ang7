@@ -1,6 +1,6 @@
 <div class="container">
 
-  <h1 class="title">Title Goes Here Title Goes Here Here</h1>
+  <h1 class="title">{{ org.title | async }} </h1>
 
   <div class="contact">
     <ul>
@@ -22,12 +22,12 @@
 
   <div class="aboutUs">
     <h2>About Us</h2>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis hic architecto sit nisi incidunt minus
-      reprehenderit tempore aliquid tempora maxime, veniam earum quaerat dolor, veritatis officia soluta explicabo!
-      Est,
-      facere. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque commodi nesciunt sint sequi aliquam
-      molestias a tempore ab, tempora consectetur consequuntur veritatis delectus nostrum autem incidunt. Velit sunt
-      aliquid eveniet.</p>
+    <p>
+
+      {{ org | async | json }}
+
+
+    </p>
 
   </div>
 

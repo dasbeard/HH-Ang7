@@ -16,9 +16,12 @@ import { LoginPageComponent } from './components/pages/logReg/login-page/login-p
 import { LoginComponent } from './components/pages/logReg/login/login.component';
 import { RegisterComponent } from './components/pages/logReg/register/register.component';
 import { LocationComponent } from './components/pages/location/location.component';
-import { ServicesComponent } from './components/layout/services/services.component';
 import { HoursOfOpTableComponent } from './components/layout/hours-of-op-table/hours-of-op-table.component';
 import { ServingFoodTableComponent } from './components/layout/serving-food-table/serving-food-table.component';
+import { ServicesComponent } from './components/layout/services/services.component';
+
+// Services
+import { DataServiceService } from './services/data-service.service'
 
 // Firebase
 import { AngularFireModule } from '@angular/fire';
@@ -33,6 +36,7 @@ import { AgmCoreModule } from '@agm/core';
 
 // Material Design
 import { MatButtonModule, MatCheckboxModule, MatToolbarModule, MatExpansionModule, MatListModule, MatButtonToggleModule, MatInputModule, MatIconModule, MatFormFieldModule, MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 
@@ -51,7 +55,8 @@ import { MatButtonModule, MatCheckboxModule, MatToolbarModule, MatExpansionModul
     LocationComponent,
     ServicesComponent,
     HoursOfOpTableComponent,
-    ServingFoodTableComponent
+    ServingFoodTableComponent,
+    PageNotFoundComponent
 
   ],
   imports: [
@@ -81,7 +86,7 @@ import { MatButtonModule, MatCheckboxModule, MatToolbarModule, MatExpansionModul
       apiKey: Keys.apiKey
     })
   ],
-  providers: [],
+  providers: [DataServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

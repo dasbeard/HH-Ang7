@@ -1,4 +1,4 @@
-<mat-accordion>
+<mat-accordion *ngIf="allLocations">
   <mat-expansion-panel [expanded]="true">
     <mat-expansion-panel-header>
       <mat-panel-title>
@@ -8,20 +8,12 @@
         Number of Locations
       </mat-panel-description>
     </mat-expansion-panel-header>
-    <mat-list class="location">
+    <mat-list class="location" *ngFor="let m of allLocations">
       <mat-list-item>
-        <p class="name">Location Name</p>
-        <p class="address">12374 Main St, My Town</p>
-        <p class="dist"> (0.2mi)</p>
-      </mat-list-item>
-      <mat-list-item>
-        <p class="name">Location Name</p>
-        <p class="address">12374 Main St, My Town</p>
-        <p class="dist"> (0.2mi)</p>
-      </mat-list-item>
-      <mat-list-item>
-        <p class="name">Location Name</p>
-        <p class="address">12374 Main St, My Town</p>
+        <a [routerLink]="['org', m.id ]">
+          <p class="name"> {{ m.title }}</p>
+        </a>
+        <p class="address">{{ m.streetAddress1}} {{ m.streetAddress2}}, {{ m.neighborhood}}</p>
         <p class="dist"> (0.2mi)</p>
       </mat-list-item>
     </mat-list>
