@@ -1,5 +1,5 @@
 <agm-map [latitude]="userLocation.latitude" [longitude]="userLocation.longitude" [zoom]="userLocation.zoomLevel"
-  (zoomChange)="onMapZoom($event)">
+  (zoomChange)="onMapZoom($event)" [scrollwheel]=false>
 
   <!-- Browser Location -->
   <agm-marker *ngIf="userMarker" [latitude]="userLocation.latitude" [longitude]="userLocation.longitude" iconUrl="http://maps.google.com/mapfiles/ms/icons/lightblue.png">

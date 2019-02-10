@@ -53,10 +53,3 @@
 ::ng-deep .mat-checkbox-checked .mat-checkbox-background {
   background-color: darkcyan !important;
 }
-
-/* .mat-select-disabled .mat-select-value {
-  color: rgba(red, 0.38);
-} */
-/* ::ng-deep .mat-checkbox .mat-checkbox-frame {
-  border-color: violet;
-} */
