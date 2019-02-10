@@ -1,4 +1,4 @@
-export class Services {
+export class OrgServices {
   beds?: boolean;
   clothing?: boolean;
   childCare?: boolean;
@@ -38,7 +38,7 @@ export class OrganizationInfo {
   zipcode?: number;
   country?: string;
   aboutUs?: string;
-  services?: Services;
+  services?: OrgServices;
   otherServices?: string;
   location?: GeoLocation;
 };

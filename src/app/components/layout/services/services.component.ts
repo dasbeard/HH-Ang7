@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { OrgServices } from 'src/app/models/Location';
+
 
 @Component({
   selector: 'app-services',
@@ -6,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./services.component.css']
 })
 export class ServicesComponent implements OnInit {
+  @Input() orgServices: OrgServices;
 
   beds: boolean = true;
 
@@ -13,6 +16,8 @@ export class ServicesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log(this.orgServices);
+
   }
 
 }

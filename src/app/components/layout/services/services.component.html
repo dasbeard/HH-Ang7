@@ -2,13 +2,14 @@
 
   <!-- TODO: To enable checked status, must use model in .ts file -->
 
-  <mat-checkbox class="beds" disabled=true [(ngModel)]="beds"> Beds Available</mat-checkbox>
-  <mat-checkbox class="clothing rightAlign" [(ngModel)]="beds">Clothing Available</mat-checkbox>
-  <mat-checkbox class="donations" color='warn'>Accepts Donations</mat-checkbox>
-  <mat-checkbox class="eduHelp rightAlign">Education Help</mat-checkbox>
-  <mat-checkbox class="childCare">Childcare Available</mat-checkbox>
-  <mat-checkbox class="jobPlacement rightAlign">Job Placement</mat-checkbox>
-  <mat-checkbox class="interview">Interview Help</mat-checkbox>
-  <mat-checkbox class="recActivities rightAlign">Recreational Activities</mat-checkbox>
+  <mat-checkbox class="beds" disabled=true [(ngModel)]="orgServices.beds"> Beds Available</mat-checkbox>
+  <mat-checkbox class="clothing rightAlign" disabled=true [(ngModel)]="orgServices.clothing">Clothing Available</mat-checkbox>
+  <mat-checkbox class="donations" color='warn' disabled=true [(ngModel)]="orgServices.donations">Accepts Donations</mat-checkbox>
+  <mat-checkbox class="eduHelp rightAlign" disabled=true [(ngModel)]="orgServices.education">Education Help</mat-checkbox>
+  <mat-checkbox class="childCare" disabled=true [(ngModel)]="orgServices.childCare">Childcare Available</mat-checkbox>
+  <mat-checkbox class="jobPlacement rightAlign" disabled=true [(ngModel)]="orgServices.jobPlacement">Job Placement</mat-checkbox>
+  <mat-checkbox class="interview" disabled=true [(ngModel)]="orgServices.interview">Interview Help</mat-checkbox>
+  <mat-checkbox class="recActivities rightAlign" disabled=true [(ngModel)]="orgServices.recActivities">Recreational
+    Activities</mat-checkbox>
 
 </div>

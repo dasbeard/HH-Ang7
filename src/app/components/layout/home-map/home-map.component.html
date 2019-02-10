@@ -17,7 +17,11 @@
     <agm-marker *ngFor="let m of allOrgs" [latitude]="m.location.latitude" [longitude]="m.location.longitude">
 
       <agm-info-window>
-        <strong>{{ m.title }}</strong>
+        <strong>
+          <a [routerLink]="['org', m.id ]">
+            {{ m.title }}
+          </a>
+        </strong>
       </agm-info-window>
 
     </agm-marker>
