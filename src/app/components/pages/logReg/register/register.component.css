@@ -7,13 +7,13 @@
   height: 275px;
   max-height: 350px;
   margin: 0 auto;
-  padding: 10px 20px;
+  padding: 25px 20px;
   border-radius: 5px;
   box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.5);
 }
 
 mat-form-field {
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 
 .form-container {
@@ -22,7 +22,7 @@ mat-form-field {
 
   display: grid;
   grid-template-areas: 
-                      "street street"
+                      "street street2"
                       "city zip"
                       "btn btn";
   grid-template-rows: 42% 42% auto;
@@ -35,6 +35,10 @@ mat-form-field {
 
 .street{
   grid-area: street;
+}
+.street2{
+  grid-area: street2;
+  margin-left: 10px;
 }
 .city{
   grid-area: city;

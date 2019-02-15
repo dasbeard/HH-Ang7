@@ -32,7 +32,9 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AgmCoreModule } from '@agm/core';
 
 // Material Design
-import { MatButtonModule, MatCheckboxModule, MatToolbarModule, MatExpansionModule, MatListModule, MatButtonToggleModule, MatInputModule, MatIconModule, MatFormFieldModule, MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatToolbarModule, MatExpansionModule, MatListModule, MatButtonToggleModule, MatInputModule, MatIconModule, MatFormFieldModule, MatTableModule, MatPaginatorModule, MatSortModule, MatDialogModule } from '@angular/material';
+
+import { RegisterDialog } from 'src/app/components/pages/logReg/register/register.component'
 
 
 
@@ -51,7 +53,8 @@ import { MatButtonModule, MatCheckboxModule, MatToolbarModule, MatExpansionModul
     LocationComponent,
     ServicesComponent,
     HoursOfOpTableComponent,
-    ServingFoodTableComponent
+    ServingFoodTableComponent,
+    RegisterDialog
 
   ],
   imports: [
@@ -73,6 +76,7 @@ import { MatButtonModule, MatCheckboxModule, MatToolbarModule, MatExpansionModul
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    MatDialogModule,
     AngularFireModule.initializeApp(Keys.firebase),
     AngularFirestoreModule,   // Database
     AngularFireAuthModule,    // Auth Features
@@ -82,6 +86,8 @@ import { MatButtonModule, MatCheckboxModule, MatToolbarModule, MatExpansionModul
     })
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [RegisterDialog]
+
 })
 export class AppModule { }
