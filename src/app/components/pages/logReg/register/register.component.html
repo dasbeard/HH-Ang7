@@ -1,6 +1,11 @@
 <div class="container">
+  <input
+    ngx-google-places-autocomplete
+    #placesRef="ngx-places"
+    (onAddressChange)="handleAddressChange($event)"
+  />
 
-  <div class="form-container">
+  <!-- <div class="form-container">
     <mat-form-field class="street">
       <input matInput [(ngModel)]="newOrg.streetAddress1" placeholder="Enter your Street Address" required aria-label="Street Address"
         autocomplete="street-address">
@@ -23,6 +28,5 @@
 
     <button mat-raised-button color="accent" class="btn" (click)="register()">Get Started!</button>
 
-  </div>
-
+  </div> -->
 </div>

@@ -21,10 +21,10 @@ mat-form-field {
   flex-direction: column; */
 
   display: grid;
-  grid-template-areas: 
-                      "street street2"
-                      "city zip"
-                      "btn btn";
+  grid-template-areas:
+    "street street2"
+    "city zip"
+    "btn btn";
   grid-template-rows: 42% 42% auto;
   grid-template-columns: 65% 35%;
 }
@@ -33,20 +33,24 @@ mat-form-field {
   width: 100%;
 }
 
-.street{
+.street {
   grid-area: street;
 }
-.street2{
+.street2 {
   grid-area: street2;
   margin-left: 10px;
 }
-.city{
+.city {
   grid-area: city;
 }
-.zip{
+.zip {
   grid-area: zip;
   margin-left: 10px;
 }
-.btn{
+.btn {
   grid-area: btn;
+}
+
+input {
+  width: 400px;
 }
