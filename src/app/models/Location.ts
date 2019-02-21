@@ -7,7 +7,7 @@ export class OrgServices {
   education?: boolean;
   jobPlacement?: boolean;
   interview?: boolean;
-};
+}
 
 export class Hours {
   day: string;
@@ -15,7 +15,7 @@ export class Hours {
   openPeriod: string;
   closeTime: number;
   closePeriod: string;
-};
+}
 
 export class GeoLocation {
   latitude?: number;
@@ -29,7 +29,7 @@ export class OrganizationInfo {
   userEmail?: string;
   contactEmail?: string;
   phone?: number;
-  // fullAddress?: string;
+  formattedAddress?: string;
   streetAddress1?: string;
   streetAddress2?: string;
   city?: string;
@@ -41,7 +41,7 @@ export class OrganizationInfo {
   services?: OrgServices;
   otherServices?: string;
   location?: GeoLocation;
-};
+}
 
 export class userLocation {
   latitude: number;

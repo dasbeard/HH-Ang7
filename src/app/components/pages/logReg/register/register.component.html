@@ -1,32 +1,69 @@
 <div class="container">
-  <input
-    ngx-google-places-autocomplete
-    #placesRef="ngx-places"
-    (onAddressChange)="handleAddressChange($event)"
-  />
-
-  <!-- <div class="form-container">
-    <mat-form-field class="street">
-      <input matInput [(ngModel)]="newOrg.streetAddress1" placeholder="Enter your Street Address" required aria-label="Street Address"
-        autocomplete="street-address">
+  <form class="input">
+    <mat-form-field class="full-width">
+      <input
+        ngx-google-places-autocomplete
+        matInput
+        [options]="{
+          types: [],
+          componentRestrictions: { country: 'US' }
+        }"
+        on-focus="geolocate()"
+        #placesRef="ngx-places"
+        placeholder="Enter Your Organizations Address"
+        (onAddressChange)="handleAddressChange($event)"
+      />
     </mat-form-field>
+  </form>
 
-    <mat-form-field class="street2">
-      <input matInput [(ngModel)]="newOrg.streetAddress2" placeholder="Unit" aria-label="Street Address Unit"
-        autocomplete="street-address-2">
-    </mat-form-field>
+  <mat-form-field class="address">
+    <input
+      matInput
+      [(ngModel)]="newOrg.streetAddress1"
+      placeholder="Street Address"
+      disabled
+      aria-label="Street Address"
+      autocomplete="street-address"
+    />
+  </mat-form-field>
 
+  <mat-form-field class="city">
+    <input
+      matInput
+      [(ngModel)]="newOrg.city"
+      placeholder=" City"
+      type="text"
+      disabled
+      aria-label="City"
+      autocomplete="locality"
+    />
+  </mat-form-field>
 
-    <mat-form-field class="city">
-      <input matInput [(ngModel)]="newOrg.city" placeholder=" City" type="text" required aria-label="City" autocomplete="locality">
-    </mat-form-field>
+  <mat-form-field class="state">
+    <input
+      matInput
+      [(ngModel)]="newOrg.state"
+      placeholder=" state"
+      type="text"
+      disabled
+      aria-label="State"
+    />
+  </mat-form-field>
 
-    <mat-form-field class="zip">
-      <input matInput [(ngModel)]="newOrg.zipcode" placeholder=" Zipcode" type="number" required aria-label="Zipcode"
-        min="5" autocomplete="postal-code">
-    </mat-form-field>
+  <mat-form-field class="zip">
+    <input
+      matInput
+      [(ngModel)]="newOrg.zipcode"
+      placeholder=" Zipcode"
+      type="number"
+      disabled
+      aria-label="Zipcode"
+      min="5"
+      autocomplete="postal-code"
+    />
+  </mat-form-field>
 
-    <button mat-raised-button color="accent" class="btn" (click)="register()">Get Started!</button>
-
-  </div> -->
+  <button mat-raised-button color="accent" class="btn" (click)="register()">
+    Get Started!
+  </button>
 </div>

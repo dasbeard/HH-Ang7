@@ -10,15 +10,63 @@
   padding: 25px 20px;
   border-radius: 5px;
   box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.5);
+
+  display: grid;
+  grid-template-areas:
+    "input input input"
+    "address address address"
+    "city state zip"
+    "btn btn btn";
+  grid-template-rows: repeat(4, 1fr);
+  /* grid-template-columns: repeat(3, 1fr); */
+  grid-template-columns: 60% 20% 20%;
 }
 
-mat-form-field {
+.input {
+  grid-area: input;
+  width: 100%;
+}
+
+.input mat-form-field {
+  text-align: center;
+  width: 100%;
+}
+
+.address {
+  grid-area: address;
+  width: 100%;
+  text-align: center;
+}
+
+.city {
+  grid-area: city;
+  width: 90%;
+  text-align: center;
+}
+
+.state {
+  grid-area: state;
+  width: 90%;
+  text-align: center;
+}
+
+.zip {
+  grid-area: zip;
+  width: 90%;
+  text-align: center;
+}
+
+.btn {
+  grid-area: btn;
+  width: 100%;
+  text-align: center;
+}
+
+/* mat-form-field {
   margin-bottom: 15px;
 }
 
 .form-container {
-  /* display: flex;
-  flex-direction: column; */
 
   display: grid;
   grid-template-areas:
@@ -53,4 +101,4 @@ mat-form-field {
 
 input {
   width: 400px;
-}
+} */
