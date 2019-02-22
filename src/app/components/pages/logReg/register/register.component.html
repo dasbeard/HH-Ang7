@@ -10,60 +10,62 @@
         }"
         on-focus="geolocate()"
         #placesRef="ngx-places"
-        placeholder="Enter Your Organizations Address"
+        placeholder="Enter Your Organizations Name or Address"
         (onAddressChange)="handleAddressChange($event)"
       />
     </mat-form-field>
   </form>
 
-  <mat-form-field class="address">
+  <mat-form-field class="address" *ngIf="newOrg.streetAddress1">
     <input
       matInput
+      floatLabel="never"
       [(ngModel)]="newOrg.streetAddress1"
-      placeholder="Street Address"
       disabled
       aria-label="Street Address"
-      autocomplete="street-address"
     />
   </mat-form-field>
 
-  <mat-form-field class="city">
+  <mat-form-field class="city" *ngIf="newOrg.city">
     <input
       matInput
+      floatLabel="never"
       [(ngModel)]="newOrg.city"
-      placeholder=" City"
       type="text"
       disabled
       aria-label="City"
-      autocomplete="locality"
     />
   </mat-form-field>
 
-  <mat-form-field class="state">
+  <mat-form-field class="state" *ngIf="newOrg.state">
     <input
       matInput
+      floatLabel="never"
       [(ngModel)]="newOrg.state"
-      placeholder=" state"
       type="text"
       disabled
-      aria-label="State"
     />
   </mat-form-field>
 
-  <mat-form-field class="zip">
+  <mat-form-field class="zip" *ngIf="newOrg.zipcode">
     <input
       matInput
+      floatLabel="never"
       [(ngModel)]="newOrg.zipcode"
-      placeholder=" Zipcode"
       type="number"
       disabled
       aria-label="Zipcode"
       min="5"
-      autocomplete="postal-code"
     />
   </mat-form-field>
 
-  <button mat-raised-button color="accent" class="btn" (click)="register()">
+  <button
+    mat-raised-button
+    [disabled]="isDisabled"
+    color="accent"
+    class="btn"
+    (click)="register()"
+  >
     Get Started!
   </button>
 </div>

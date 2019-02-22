@@ -1,5 +1,10 @@
 import { Component, OnInit, Inject } from "@angular/core";
-import { FormControl, Validators } from "@angular/forms";
+import {
+  FormControl,
+  FormBuilder,
+  Validators,
+  FormGroup
+} from "@angular/forms";
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
 
 import { OrganizationInfo } from "../../../../models/Location";
@@ -14,36 +19,23 @@ export interface DialogData {
   styleUrls: ["./register.component.css"]
 })
 export class RegisterComponent implements OnInit {
-  // hide = true;
-  email = new FormControl("", [Validators.required, Validators.email]);
   newOrg = new OrganizationInfo();
 
   animal: string;
   geolocation;
 
-  constructor(public dialog: MatDialog) {}
+  isDisabled: Boolean = true;
+
+  constructor(public dialog: MatDialog, private formBuilder: FormBuilder) {}
 
   ngOnInit() {}
-
-  getEmailErrorMessage() {
-    return this.email.hasError("required")
-      ? "You must enter a value"
-      : this.email.hasError("email")
-      ? "Not a valid email"
-      : "";
-  }
 
   register() {
     console.log("triggered");
     const dialogRef = this.dialog.open(RegisterDialog, {
       width: "80%",
       maxWidth: "650px",
-      data: {
-        streetAddress1: this.newOrg.streetAddress1,
-        streetAddress2: this.newOrg.streetAddress2,
-        city: this.newOrg.city,
-        zipcode: this.newOrg.zipcode
-      }
+      data: this.newOrg
     });
 
     console.log(this.newOrg);
@@ -57,7 +49,7 @@ export class RegisterComponent implements OnInit {
   }
 
   geolocate() {
-    console.log("test");
+    console.log("On Focus Triggered");
     // TODO: figure out how to make a geoloation bounds so focus Auto Locate
 
     //   if (navigator.geolocation) {
@@ -89,7 +81,8 @@ export class RegisterComponent implements OnInit {
     if (event.website) {
       this.newOrg.website = event.website;
     }
-    // TODO: IF's Name, website - maybe photos?
+    // TODO: maybe photos?
+    this.isDisabled = false;
   }
 }
 

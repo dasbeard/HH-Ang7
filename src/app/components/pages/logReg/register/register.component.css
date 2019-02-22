@@ -28,7 +28,7 @@
 }
 
 .input mat-form-field {
-  text-align: center;
+  /* text-align: center; */
   width: 100%;
 }
 
@@ -61,44 +61,3 @@
   width: 100%;
   text-align: center;
 }
-
-/* mat-form-field {
-  margin-bottom: 15px;
-}
-
-.form-container {
-
-  display: grid;
-  grid-template-areas:
-    "street street2"
-    "city zip"
-    "btn btn";
-  grid-template-rows: 42% 42% auto;
-  grid-template-columns: 65% 35%;
-}
-
-.form-container > * {
-  width: 100%;
-}
-
-.street {
-  grid-area: street;
-}
-.street2 {
-  grid-area: street2;
-  margin-left: 10px;
-}
-.city {
-  grid-area: city;
-}
-.zip {
-  grid-area: zip;
-  margin-left: 10px;
-}
-.btn {
-  grid-area: btn;
-}
-
-input {
-  width: 400px;
-} */
