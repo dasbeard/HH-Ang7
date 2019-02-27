@@ -1,0 +1,107 @@
+.regHeader {
+  text-align: center;
+}
+
+.container {
+  display: grid;
+  grid-template-areas:
+    "orgName map "
+    "address map "
+    "locality map"
+    "contact map"
+    "email email"
+    "password password";
+  grid-template-rows: repeat(7, 1fr);
+  grid-template-columns: 60% auto;
+  width: 100%;
+  /* height: 100%;
+  line-height: 2.25em; */
+}
+
+.orgName {
+  grid-area: orgName;
+  padding: 0 10px;
+}
+
+.address {
+  grid-area: address;
+  padding: 0 10px;
+  width: 100%;
+}
+
+.address .address1 {
+  width: 70%;
+}
+
+.address .address2 {
+  width: 25%;
+  margin-left: 5%;
+}
+
+.locality {
+  grid-area: locality;
+  padding: 0 10px;
+}
+
+.locality .city {
+  width: 45%;
+}
+
+.locality .state {
+  width: 20%;
+  margin-left: 5%;
+}
+
+.locality .zipcode {
+  width: 25%;
+  margin-left: 5%;
+}
+
+.contact {
+  grid-area: contact;
+  padding: 0 10px;
+}
+
+.contact .website {
+  width: 50%;
+}
+
+.contact .phone {
+  width: 45%;
+  margin-left: 5%;
+}
+
+.email {
+  grid-area: email;
+  padding: 0 10px;
+  width: 100%;
+}
+
+.password {
+  grid-area: password;
+  padding: 0 10px;
+}
+
+.password .pass {
+  width: 47.5%;
+}
+
+.password .verifyPass {
+  width: 47.5%;
+  margin-left: 5%;
+}
+
+.map {
+  grid-area: map;
+  width: 100%;
+  height: 96%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: -15px;
+}

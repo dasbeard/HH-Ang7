@@ -12,6 +12,8 @@
         #placesRef="ngx-places"
         placeholder="Enter Your Organizations Name or Address"
         (onAddressChange)="handleAddressChange($event)"
+        [(ngModel)]="newOrg.formattedAddress"
+        [ngModelOptions]="{ standalone: true }"
       />
     </mat-form-field>
   </form>

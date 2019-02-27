@@ -1,14 +1,284 @@
-<h1 mat-dialog-title>Hi</h1>
-<div mat-dialog-content>
-  <p>What's your favorite animal?</p>
-  <!-- <mat-form-field> -->
-  <!-- <input matInput [(ngModel)]="data.animal"> -->
-  {{ data | json }}
-  <!-- </mat-form-field> -->
+<h1 mat-dialog-title class="regHeader">
+  Lets get a little more information about your Organaization
+</h1>
+<div mat-dialog-content class="container" *ngIf="data.orgInfo">
+  <mat-form-field class="orgName">
+    <input
+      floatLabel="never"
+      type="text"
+      matInput
+      name="name"
+      [(ngModel)]="data.orgInfo.title"
+      placeholder="{{ 'Organization Name' || data.orgInfo.title }}"
+    />
+  </mat-form-field>
+
+  <div class="address">
+    <mat-form-field class="address1">
+      <input
+        floatLabel="never"
+        type="text"
+        matInput
+        name="streeetAddress1"
+        [(ngModel)]="data.orgInfo.streetAddress1"
+        placeholder="{{ 'Street Address' || data.orgInfo.streetAddress1 }}"
+      />
+    </mat-form-field>
+    <mat-form-field class="address2">
+      <input
+        floatLabel="never"
+        type="text"
+        matInput
+        name="streetAddress2"
+        [(ngModel)]="data.orgInfo.streetAddress2"
+        placeholder="{{ 'Unit' || data.orgInfo.streetAddress2 }}"
+      />
+    </mat-form-field>
+  </div>
+  <div class="locality">
+    <mat-form-field class="city">
+      <input
+        floatLabel="never"
+        type="text"
+        matInput
+        name="city"
+        [(ngModel)]="data.orgInfo.city"
+        placeholder="{{ 'City' || data.orgInfo.city }}"
+      />
+    </mat-form-field>
+    <mat-form-field class="state">
+      <input
+        floatLabel="never"
+        type="text"
+        matInput
+        name="state"
+        [(ngModel)]="data.orgInfo.state"
+        placeholder="{{ 'State' || data.orgInfo.state }}"
+      />
+    </mat-form-field>
+    <mat-form-field class="zipcode">
+      <input
+        floatLabel="never"
+        type="number"
+        matInput
+        name="zipcode"
+        [(ngModel)]="data.orgInfo.zipcode"
+        placeholder="{{ 'Zipcode' || data.orgInfo.zipcode }}"
+      />
+    </mat-form-field>
+  </div>
+  <div class="contact">
+    <mat-form-field class="website">
+      <input
+        floatLabel="never"
+        type="text"
+        matInput
+        name="website"
+        [(ngModel)]="data.orgInfo.website"
+        placeholder="{{ 'website' || data.orgInfo.website }}"
+      />
+    </mat-form-field>
+    <mat-form-field class="phone">
+      <input
+        floatLabel="never"
+        type="tel"
+        matInput
+        name="phone"
+        [(ngModel)]="data.orgInfo.phone"
+        placeholder="{{ 'Phone #' || data.orgInfo.phone }}"
+      />
+    </mat-form-field>
+  </div>
+
+  <mat-form-field class="email">
+    <input
+      floatLabel="never"
+      type="email"
+      matInput
+      name="email"
+      [(ngModel)]="data.orgInfo.userEmail"
+      placeholder="Email"
+    />
+  </mat-form-field>
+
+  <div class="password">
+    <mat-form-field class="pass">
+      <input
+        floatLabel="never"
+        type="password"
+        matInput
+        name="password"
+        [(ngModel)]="data.password"
+        placeholder="Password"
+      />
+    </mat-form-field>
+    <mat-form-field class="verifyPass">
+      <input
+        floatLabel="never"
+        type="password"
+        matInput
+        name="verifyPassword"
+        [(ngModel)]="data.verifyPassword"
+        placeholder="Verify Password"
+      />
+    </mat-form-field>
+  </div>
+
+  <!-- <img class="map" style="background-image: url('https://picsum.photos/400')" /> -->
+
+  <agm-map
+    class="map"
+    [latitude]="34.04929"
+    [longitude]="-118.244046"
+    [zoom]="18"
+  >
+    <agm-marker [latitude]="34.04929" [longitude]="-118.244046"> </agm-marker>
+  </agm-map>
 </div>
-<div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>
+<div mat-dialog-actions class="actions">
+  <button mat-flat-button (click)="onCancel()">
+    Cancel
+  </button>
+  <button
+    mat-raised-button
+    color="accent"
+    cdkFocusInitial
+    (click)="onRegister()"
+  >
     Ok
   </button>
 </div>
+<!-- <h1 mat-dialog-title class="regHeader">
+  Lets get a little more information about your Organaization
+</h1>
+
+<div mat-dialog-content class="inputContainer" *ngIf="data.orgInfo">
+  <form>
+    <mat-form-field>
+      <div class="orgName">
+        <input
+          floatLabel="never"
+          type="text"
+          matInput
+          name="name"
+          [(ngModel)]="data.orgInfo.title"
+          placeholder="{{ 'Organization Name' || data.orgInfo.title }}"
+        />
+      </div>
+      <div class="address">
+        <input
+          floatLabel="never"
+          type="text"
+          matInput
+          class="address1"
+          name="streeetAddress1"
+          [(ngModel)]="data.orgInfo.streetAddress1"
+          placeholder="{{ 'Street Address' || data.orgInfo.streetAddress1 }}"
+        />
+        <input
+          floatLabel="never"
+          type="text"
+          matInput
+          class="address2"
+          name="streetAddress2"
+          [(ngModel)]="data.orgInfo.streetAddress2"
+          placeholder="{{ data.orgInfo.streetAddress2 || 'Unit' }}"
+        />
+      </div>
+      <div class="locality">
+        <input
+          floatLabel="never"
+          type="text"
+          matInput
+          class="city"
+          name="city"
+          [(ngModel)]="data.orgInfo.city"
+          placeholder="{{ 'City' || data.orgInfo.city }}"
+        />
+        <input
+          floatLabel="never"
+          type="text"
+          matInput
+          class="state"
+          name="state"
+          [(ngModel)]="data.orgInfo.state"
+          placeholder="{{ 'State' || data.orgInfo.state }}"
+        />
+        <input
+          floatLabel="never"
+          type="number"
+          matInput
+          class="zipcode"
+          name="zipcode"
+          [(ngModel)]="data.orgInfo.zipcode"
+          placeholder="{{ 'Zipcode' || data.orgInfo.zipcode }}"
+        />
+      </div>
+      <div class="contact">
+        <input
+          floatLabel="never"
+          type="text"
+          matInput
+          class="website"
+          name="website"
+          [(ngModel)]="data.orgInfo.website"
+          placeholder="{{ 'website' || data.orgInfo.website }}"
+        />
+        <input
+          floatLabel="never"
+          type="phone"
+          matInput
+          class="phone"
+          name="phone"
+          [(ngModel)]="data.orgInfo.phone"
+          placeholder="{{ data.orgInfo.phone || 'Phone #' }}"
+        />
+      </div>
+      <div class="email">
+        <input
+          floatLabel="never"
+          type="email"
+          matInput
+          name="email"
+          [(ngModel)]="data.orgInfo.userEmail"
+          placeholder="Email"
+        />
+      </div>
+
+      <div class="password">
+        <input
+          floatLabel="never"
+          type="password"
+          matInput
+          class="pass"
+          name="password"
+          [(ngModel)]="data.password"
+          placeholder="Password"
+        />
+        <input
+          floatLabel="never"
+          type="password"
+          matInput
+          class="verifyPass"
+          name="verifyPassword"
+          [(ngModel)]="data.verifyPassword"
+          placeholder="Verify Password"
+        />
+      </div>
+    </mat-form-field>
+  </form>
+  <img class="map" style="background-image: url('https://picsum.photos/400')" />
+</div>
+<div mat-dialog-actions class="actionBtn">
+  <button
+    mat-raised-button
+    color="accent"
+    (click)="onRegister()"
+    cdkFocusInitial
+  >
+    Ok
+  </button>
+  <button mat-flat-button color="warn" (click)="onCancel()">
+    Cancel
+  </button>
+</div> -->
