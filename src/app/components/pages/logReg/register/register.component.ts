@@ -6,12 +6,16 @@ import {
   FormGroup
 } from "@angular/forms";
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
+// import { GoogleMapsAPIWrapper } from "@agm/core";
 
 import { OrganizationInfo } from "../../../../models/Location";
+import { DataService } from "src/app/services/data.service";
 
 export interface DialogData {
-  animal: string;
   orgInfo: OrganizationInfo;
+  email: String;
+  password: String;
+  verifyPassword: String;
 }
 
 @Component({
@@ -27,7 +31,13 @@ export class RegisterComponent implements OnInit {
 
   geolocation;
 
-  constructor(public dialog: MatDialog, private formBuilder: FormBuilder) {}
+  placeId: String;
+
+  constructor(
+    public dialog: MatDialog,
+    private formBuilder: FormBuilder,
+    private dataService: DataService // private mapsWrapper: GoogleMapsAPIWrapper
+  ) {}
 
   ngOnInit() {}
 
@@ -37,7 +47,6 @@ export class RegisterComponent implements OnInit {
       width: "90%",
       maxWidth: "650px",
       data: { orgInfo: this.newOrg }
-      // data.orgInfo: this.newOrg
     });
 
     console.log(this.newOrg);
@@ -49,6 +58,8 @@ export class RegisterComponent implements OnInit {
       if (result === "Registering") {
         // ! This is where we save and move to new page to continue registering services
         console.log(this.newOrg);
+
+        this.dataService.registerNewOrganization(this.newOrg);
       } else if (result === "Canceled") {
         console.log("Registration Canceled");
         this.newOrg = new OrganizationInfo();
@@ -59,7 +70,7 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  geolocate() {
+  geolocateOnFocus() {
     console.log("On Focus Triggered");
     // TODO: figure out how to make a geoloation bounds so focus Auto Locate
 
@@ -74,9 +85,6 @@ export class RegisterComponent implements OnInit {
   }
 
   handleAddressChange(event) {
-    console.log(event);
-
-    // ! TODO: Check Name if coming as an address
     this.newOrg.streetAddress1 =
       event.address_components[0].long_name +
       " " +
@@ -85,6 +93,12 @@ export class RegisterComponent implements OnInit {
     this.newOrg.city = event.address_components[3].long_name;
     this.newOrg.zipcode = event.address_components[7].long_name;
     this.newOrg.formattedAddress = event.formatted_address;
+
+    // Get GeoLocation by placeID
+    this.dataService.geoLocatePlace(event.place_id).subscribe(data => {
+      this.newOrg.location = data.results[0].geometry.location;
+    });
+
     if (event.formatted_phone_number) {
       this.newOrg.phone = event.formatted_phone_number;
     }
@@ -95,6 +109,8 @@ export class RegisterComponent implements OnInit {
       this.newOrg.website = event.website;
     }
     // TODO: maybe photos?
+
+    // Enable Button to continue registration
     this.isDisabled = false;
   }
 }
@@ -105,24 +121,10 @@ export class RegisterComponent implements OnInit {
   styleUrls: ["./continueRegisterDialog.component.css"]
 })
 export class RegisterDialog {
-  registerForm: FormGroup;
-
   constructor(
     public dialogRef: MatDialogRef<RegisterDialog>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData
-  ) {
-    this.registerForm = new FormGroup({
-      title: new FormControl(),
-      streetAddress1: new FormControl(),
-      streetAddress2: new FormControl(),
-      city: new FormControl(),
-      state: new FormControl(),
-      zipcode: new FormControl(),
-      phone: new FormControl(),
-      userEmail: new FormControl()
-      // contactEmail: new FormControl()
-    });
-  }
+  ) {}
 
   onCancel(): void {
     this.dialogRef.close("Canceled");

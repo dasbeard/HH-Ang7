@@ -30,11 +30,11 @@
 }
 
 .address .address1 {
-  width: 70%;
+  width: 75%;
 }
 
 .address .address2 {
-  width: 25%;
+  width: 20%;
   margin-left: 5%;
 }
 
@@ -44,16 +44,16 @@
 }
 
 .locality .city {
-  width: 45%;
+  width: 60%;
 }
 
 .locality .state {
-  width: 20%;
+  width: 10%;
   margin-left: 5%;
 }
 
 .locality .zipcode {
-  width: 25%;
+  width: 20%;
   margin-left: 5%;
 }
 
@@ -63,11 +63,11 @@
 }
 
 .contact .website {
-  width: 50%;
+  width: 55%;
 }
 
 .contact .phone {
-  width: 45%;
+  width: 40%;
   margin-left: 5%;
 }
 

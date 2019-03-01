@@ -17,9 +17,9 @@ export class Hours {
   closePeriod: string;
 }
 
-export class GeoLocation {
-  latitude?: number;
-  longitude?: number;
+export class GeoLoc {
+  lat?: number;
+  lng?: number;
 }
 
 export class OrganizationInfo {
@@ -29,18 +29,18 @@ export class OrganizationInfo {
   userEmail?: string;
   contactEmail?: string;
   phone?: number;
-  formattedAddress?: string;
+  formattedAddress: string;
   streetAddress1?: string;
   streetAddress2?: string;
   city?: string;
   neighborhood?: string;
-  state?: string;
-  zipcode?: number;
+  state: string;
+  zipcode: number;
   country?: string;
   aboutUs?: string;
   services?: OrgServices;
   otherServices?: string;
-  location?: GeoLocation;
+  location?: GeoLoc;
 }
 
 export class userLocation {

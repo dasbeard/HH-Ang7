@@ -8,7 +8,7 @@
           types: [],
           componentRestrictions: { country: 'US' }
         }"
-        on-focus="geolocate()"
+        on-focus="geolocateOnFocus()"
         #placesRef="ngx-places"
         placeholder="Enter Your Organizations Name or Address"
         (onAddressChange)="handleAddressChange($event)"
@@ -70,4 +70,8 @@
   >
     Get Started!
   </button>
+
+  <!-- <button (click)="geolocationBtn()">
+    test
+  </button> -->
 </div>

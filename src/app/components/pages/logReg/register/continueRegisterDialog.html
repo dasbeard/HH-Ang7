@@ -96,7 +96,7 @@
       type="email"
       matInput
       name="email"
-      [(ngModel)]="data.orgInfo.userEmail"
+      [(ngModel)]="data.email"
       placeholder="Email"
     />
   </mat-form-field>
@@ -128,11 +128,17 @@
 
   <agm-map
     class="map"
-    [latitude]="34.04929"
-    [longitude]="-118.244046"
-    [zoom]="18"
+    [latitude]="data.orgInfo.location.lat"
+    [longitude]="data.orgInfo.location.lng"
+    [zoom]="16"
+    [fullscreenControlOptions]="false"
+    [zoomControl]="false"
   >
-    <agm-marker [latitude]="34.04929" [longitude]="-118.244046"> </agm-marker>
+    <agm-marker
+      [latitude]="data.orgInfo.location.lat"
+      [longitude]="data.orgInfo.location.lng"
+    >
+    </agm-marker>
   </agm-map>
 </div>
 <div mat-dialog-actions class="actions">
