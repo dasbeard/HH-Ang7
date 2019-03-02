@@ -91,9 +91,19 @@ export class DataService {
 
   registerNewOrganization(newOrg: OrganizationInfo) {
     console.log("New Org Triggered", newOrg);
-    let temp = JSON.parse(JSON.stringify(newOrg));
+    let orgToAdd = JSON.parse(JSON.stringify(newOrg));
+    let newOrgId: String;
 
-    this.organizationCollection.add(temp);
+    this.organizationCollection
+      .add(orgToAdd)
+      .then(docRef => {
+        console.log(docRef);
+        newOrgId = docRef.id;
+        console.log(newOrgId);
+      })
+      .then(data => console.log("testing", newOrgId));
+
+    // this.OrgDoc = this.afs.doc('locations').
 
     /* 
       TODO: this saves, now need to return the ID and register the email/Password and add the paramter for the orgID

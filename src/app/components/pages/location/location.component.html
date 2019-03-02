@@ -1,48 +1,52 @@
 <div class="container" *ngIf="orgInfo != null">
-
   <h1 class="title">{{ orgInfo.title }}</h1>
 
   <div class="contact">
     <ul>
       <li>{{ orgInfo.phone }}</li>
-      <li>{{orgInfo.website}}</li>
-      <li>{{orgInfo.contactEmail}}</li>
+      <li>{{ orgInfo.website }}</li>
+      <li>{{ orgInfo.contactEmail }}</li>
     </ul>
   </div>
 
-  <img class="img" src="" alt="" style="background-image: url('https://fillmurray.com/550/550')">
+  <img
+    class="img"
+    src=""
+    alt=""
+    style="background-image: url('https://fillmurray.com/550/550')"
+  />
 
   <!-- <img class="map" src="" alt="" style="background-image: url('https://fillmurray.com/450/450')"> -->
-  <agm-map class="map" [latitude]="orgInfo.location.latitude" [longitude]="orgInfo.location.longitude" [zoom]="16">
-
-    <agm-marker [latitude]="orgInfo.location.latitude" [longitude]="orgInfo.location.longitude">
-
+  <agm-map
+    class="map"
+    [latitude]="orgInfo.location.lat"
+    [longitude]="orgInfo.location.lng"
+    [zoom]="16"
+  >
+    <agm-marker
+      [latitude]="orgInfo.location.lat"
+      [longitude]="orgInfo.location.lng"
+    >
     </agm-marker>
   </agm-map>
 
   <ul class="address">
     <li>
-      {{orgInfo.streetAddress1}} {{orgInfo.streetAddress2}}, {{orgInfo.city}}, {{orgInfo.state}} {{orgInfo.zipcode}}
+      {{ orgInfo.streetAddress1 }} {{ orgInfo.streetAddress2 }},
+      {{ orgInfo.city }}, {{ orgInfo.state }} {{ orgInfo.zipcode }}
     </li>
   </ul>
 
   <div class="aboutUs">
     <h2>About Us</h2>
     <p>
-
       {{ orgInfo.aboutUs }}
-
     </p>
-
   </div>
-
-
-
 
   <div class="hoursOfOp">
     <h2>Hours of Operation</h2>
     <app-hours-of-op-table></app-hours-of-op-table>
-
   </div>
 
   <div class="foodHours">
@@ -55,18 +59,14 @@
     <app-services [orgServices]="orgInfo.services"></app-services>
   </div>
 
-
   <div class="otherServices">
     <h2>Other Services</h2>
     <p>
-      {{orgInfo.otherServices}}
+      {{ orgInfo.otherServices }}
     </p>
   </div>
   <!-- </div> -->
-
 </div>
-
-
 
 <!-- 
   ng generate @angular/material:material-table --name=data-table

@@ -29,13 +29,13 @@ export class OrganizationInfo {
   userEmail?: string;
   contactEmail?: string;
   phone?: number;
-  formattedAddress: string;
+  formattedAddress?: string;
   streetAddress1?: string;
   streetAddress2?: string;
   city?: string;
   neighborhood?: string;
-  state: string;
-  zipcode: number;
+  state?: string;
+  zipcode?: number;
   country?: string;
   aboutUs?: string;
   services?: OrgServices;

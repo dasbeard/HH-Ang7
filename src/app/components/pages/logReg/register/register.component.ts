@@ -10,12 +10,11 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
 
 import { OrganizationInfo } from "../../../../models/Location";
 import { DataService } from "src/app/services/data.service";
+import { UserModel } from "src/app/models/User";
 
 export interface DialogData {
   orgInfo: OrganizationInfo;
-  email: String;
-  password: String;
-  verifyPassword: String;
+  newUser: UserModel;
 }
 
 @Component({
@@ -24,14 +23,11 @@ export interface DialogData {
   styleUrls: ["./register.component.css"]
 })
 export class RegisterComponent implements OnInit {
-  newOrg = new OrganizationInfo();
+  newOrg: OrganizationInfo = new OrganizationInfo();
   addressInput: String = "";
-
   isDisabled: Boolean = false;
 
-  geolocation;
-
-  placeId: String;
+  newUser: UserModel = new UserModel();
 
   constructor(
     public dialog: MatDialog,
@@ -46,7 +42,10 @@ export class RegisterComponent implements OnInit {
     const dialogRef = this.dialog.open(RegisterDialog, {
       width: "90%",
       maxWidth: "650px",
-      data: { orgInfo: this.newOrg }
+      data: {
+        orgInfo: this.newOrg,
+        newUser: this.newUser
+      }
     });
 
     console.log(this.newOrg);
@@ -57,16 +56,20 @@ export class RegisterComponent implements OnInit {
 
       if (result === "Registering") {
         // ! This is where we save and move to new page to continue registering services
-        console.log(this.newOrg);
+        console.log(this.newOrg, this.newUser);
 
+        /*
+        
+        !! This saves a NEW ORG
         this.dataService.registerNewOrganization(this.newOrg);
+
+        !! Need to get User Info and send that to services to register New User
+        */
       } else if (result === "Canceled") {
         console.log("Registration Canceled");
         this.newOrg = new OrganizationInfo();
         this.addressInput = "";
       }
-
-      // this.animal = result;
     });
   }
 
@@ -121,6 +124,8 @@ export class RegisterComponent implements OnInit {
   styleUrls: ["./continueRegisterDialog.component.css"]
 })
 export class RegisterDialog {
+  verifyPassword: string;
+
   constructor(
     public dialogRef: MatDialogRef<RegisterDialog>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData
