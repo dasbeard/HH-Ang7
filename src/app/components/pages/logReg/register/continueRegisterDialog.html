@@ -7,41 +7,39 @@
     <form class="orgContainer" #orgForm="ngForm" novalidate>
       <mat-form-field class="orgName">
         <input
-          floatLabel="never"
           type="text"
           matInput
           #title="ngModel"
-          [class.is-invalid]="title.invalid && title.touched"
           required
           minlength="2"
           name="title"
           [(ngModel)]="data.orgInfo.title"
           placeholder="{{ 'Organization Name' || data.orgInfo.title }}"
         />
-        <mat-error *ngIf="title.invalid && title.touched"
-          >Title is required</mat-error
-        >
+        <mat-error *ngIf="title.invalid && title.touched">
+          Title is required
+        </mat-error>
       </mat-form-field>
 
       <div class="address">
         <mat-form-field class="address1">
           <input
-            floatLabel="never"
             type="text"
             matInput
             #streetAddress1="ngModel"
             required
+            minlength="2"
             name="streeetAddress1"
             [(ngModel)]="data.orgInfo.streetAddress1"
             placeholder="{{ 'Street Address' || data.orgInfo.streetAddress1 }}"
           />
-          <mat-error *ngIf="streetAddress1.invalid && streetAddress1.touched"
-            >Address is required</mat-error
-          >
+          <mat-error *ngIf="streetAddress1.invalid && streetAddress1.touched">
+            Address is required
+          </mat-error>
         </mat-form-field>
+
         <mat-form-field class="address2">
           <input
-            floatLabel="never"
             type="text"
             matInput
             #streetAddress2="ngModel"
@@ -51,10 +49,10 @@
           />
         </mat-form-field>
       </div>
+
       <div class="locality">
         <mat-form-field class="city">
           <input
-            floatLabel="never"
             type="text"
             matInput
             #city="ngModel"
@@ -63,44 +61,46 @@
             [(ngModel)]="data.orgInfo.city"
             placeholder="{{ 'City' || data.orgInfo.city }}"
           />
-          <mat-error *ngIf="city.invalid && city.touched"
-            >City is required</mat-error
+          <mat-error *ngIf="city.invalid && city.touched">
+            City is required</mat-error
           >
         </mat-form-field>
+
         <mat-form-field class="state">
           <input
-            floatLabel="never"
             type="text"
             matInput
             #state="ngModel"
             name="state"
+            minlength="2"
+            maxlength="2"
             [(ngModel)]="data.orgInfo.state"
             placeholder="{{ 'State' || data.orgInfo.state }}"
           />
-          <mat-error *ngIf="state.invalid && state.touched"
-            >State is required</mat-error
-          >
+          <mat-error *ngIf="state.invalid && state.touched">
+            State is required
+          </mat-error>
         </mat-form-field>
+
         <mat-form-field class="zipcode">
           <input
-            floatLabel="never"
             type="number"
             matInput
             #zipcode="ngModel"
             required
             name="zipcode"
             [(ngModel)]="data.orgInfo.zipcode"
-            placeholder="{{ 'Zipcode' || data.orgInfo.zipcode }}"
+            placeholder="{{ 'Zip' || data.orgInfo.zipcode }}"
           />
-          <mat-error *ngIf="zipcode.invalid && zipcode.touched"
-            >Zipcode is required</mat-error
-          >
+          <mat-error *ngIf="zipcode.invalid && zipcode.touched">
+            Zipcode is required
+          </mat-error>
         </mat-form-field>
       </div>
+
       <div class="contact">
         <mat-form-field class="website">
           <input
-            floatLabel="never"
             type="text"
             matInput
             #website="ngModel"
@@ -109,19 +109,24 @@
             [(ngModel)]="data.orgInfo.website"
             placeholder="{{ 'website' || data.orgInfo.website }}"
           />
+          <mat-error *ngIf="website.invalid && website.touched">
+            Invalid Website Site
+          </mat-error>
         </mat-form-field>
         <mat-form-field class="phone">
           <input
-            floatLabel="never"
             type="tel"
             matInput
             #phone="ngModel"
-            [class.is-invalid]="phone.invalid && phone.touched"
             name="phone"
             minlength="10"
+            pattern="^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$"
             [(ngModel)]="data.orgInfo.phone"
             placeholder="{{ 'Phone #' || data.orgInfo.phone }}"
           />
+          <mat-error *ngIf="phone.invalid && phone.touched">
+            Invalid Phone Number
+          </mat-error>
         </mat-form-field>
       </div>
     </form>
@@ -150,25 +155,30 @@
 
   <div class="userForm">
     <h5>This is the information you will use to Log In</h5>
-    <form>
+    <form #userForm="ngForm">
       <mat-form-field class="email">
         <input
-          floatLabel="never"
           type="email"
           matInput
           name="email"
+          required
+          #email="ngModel"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}"
           [(ngModel)]="data.newUser.email"
           placeholder="Email"
-          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}"
         />
+        <mat-error *ngIf="email.invalid && email.touched">
+          Invalid Phone Number
+        </mat-error>
       </mat-form-field>
 
       <div class="password">
         <mat-form-field class="pass">
           <input
-            floatLabel="never"
             type="password"
             matInput
+            required
+            #password="ngModel"
             name="password"
             [(ngModel)]="data.newUser.password"
             placeholder="Password"
@@ -176,14 +186,24 @@
         </mat-form-field>
         <mat-form-field class="verifyPass">
           <input
-            floatLabel="never"
             type="password"
             matInput
+            required
+            #verifyPassword="ngModel"
             name="verifyPassword"
-            [ngModel]="verifyPassword"
+            [(ngModel)]="data.newUser.verifyPassword"
             placeholder="Verify Password"
           />
         </mat-form-field>
+        <mat-error
+          *ngIf="
+            password.value != verifyPassword.value &&
+            password.valid &&
+            verifyPassword.valid
+          "
+        >
+          Passwords DO NOT Match
+        </mat-error>
       </div>
     </form>
   </div>

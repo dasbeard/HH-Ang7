@@ -129,7 +129,9 @@ export class RegisterDialog {
   constructor(
     public dialogRef: MatDialogRef<RegisterDialog>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData
-  ) {}
+  ) {
+    // data.newUser.verifyPassword='';
+  }
 
   onCancel(): void {
     this.dialogRef.close("Canceled");
